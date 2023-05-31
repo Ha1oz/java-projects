@@ -19,9 +19,8 @@ public class Skill {
 
     @Override
     public String toString() {
-        return "Skill{" +
-                "characteristic=" + characteristic +
-                ", score=" + score +
+        return "{" + characteristic +
+                ", " + score +
                 '}';
     }
 }

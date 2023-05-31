@@ -13,7 +13,7 @@ public class Student {
     @NonNull
     public Student(String fullName, Skill... skills) {
         this.fullName = fullName;
-        studentSkills = Arrays.stream(skills).toList();
+        studentSkills.addAll(Arrays.asList(skills));
     }
 
     public Student(String fullName) {
@@ -35,7 +35,13 @@ public class Student {
     }
     @NonNull
     public void addSkills(Skill... skills){
-        studentSkills.addAll(Arrays.asList(skills));
+        for(Skill skill : skills) {
+            if (studentSkills.contains(skill)) {
+                continue;
+            }
+            studentSkills.add(skill);
+        }
+//        studentSkills.addAll(Arrays.asList(skills));
     }
     public HogwartsFaculty getFaculty() {
         return faculty;
@@ -43,14 +49,14 @@ public class Student {
     @NonNull
     public void setFaculty(HogwartsFaculty faculty) {
         this.faculty = faculty;
+        faculty.addStudent(this);
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "fullName='" + fullName + '\'' +
-                ", skills=" + studentSkills +
-                ", faculty=" + faculty +
+        return  fullName +
+                ", " + studentSkills +
+                ", " + faculty +
                 '}';
     }
 }
