@@ -9,7 +9,8 @@ public class CompareStudents {
     @NonNull
     public static Student compare(Student student1, Student student2) {
         if (areStudentFromSameFaculty(student1,student2)) {
-            if (isStudentBetter(student1,student2,SkillNature.SOCIAL)) {
+            SkillNature skillNature = student1.getFaculty().getFacultySkillNature();
+            if (isStudentBetter(student1,student2,skillNature)) {
                 return student1;
             }
             return student2;

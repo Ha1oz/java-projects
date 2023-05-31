@@ -2,19 +2,12 @@ package entities.faculty;
 
 import entities.HogwartsFaculty;
 import entities.quality.Characteristic;
+import entities.quality.SkillNature;
 
 public class Slytherin extends HogwartsFaculty {
     public Slytherin() {
-        super();
+        super(SkillNature.SLYTHERIN);
         name = "Slytherin";
-    }
-    @Override
-    protected void setFacultyCharacteristics() {
-        characteristics.add(Characteristic.CUNNING);
-        characteristics.add(Characteristic.DETERMINATION);
-        characteristics.add(Characteristic.AMBITION);
-        characteristics.add(Characteristic.INGENUITY);
-        characteristics.add(Characteristic.AUTHORITY);
     }
     @Override
     public String toString() {

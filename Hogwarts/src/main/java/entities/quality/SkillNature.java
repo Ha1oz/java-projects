@@ -1,5 +1,5 @@
 package entities.quality;
 
 public enum SkillNature {
-    SOCIAL, MAGIC;
+    GRYFFINDOR, HUFFLEPUFF, RAVENCLAW, SLYTHERIN, MAGIC;
 }

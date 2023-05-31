@@ -41,7 +41,6 @@ public class Student {
             }
             studentSkills.add(skill);
         }
-//        studentSkills.addAll(Arrays.asList(skills));
     }
     public HogwartsFaculty getFaculty() {
         return faculty;

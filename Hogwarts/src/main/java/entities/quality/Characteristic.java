@@ -10,11 +10,11 @@ import java.util.List;
 @Getter
 @RequiredArgsConstructor
 public enum Characteristic {
-    NOBILITY(SkillNature.SOCIAL), HONOR(SkillNature.SOCIAL), COURAGE(SkillNature.SOCIAL),
-    DILIGENCE(SkillNature.SOCIAL), LOYALTY(SkillNature.SOCIAL), HONESTY(SkillNature.SOCIAL),
-    INTELLIGENCE(SkillNature.SOCIAL), WISDOM(SkillNature.SOCIAL), WIT(SkillNature.SOCIAL), CREATIVITY(SkillNature.SOCIAL),
-    CUNNING(SkillNature.SOCIAL), DETERMINATION(SkillNature.SOCIAL), AMBITION(SkillNature.SOCIAL),
-    INGENUITY(SkillNature.SOCIAL), AUTHORITY(SkillNature.SOCIAL),
+    NOBILITY(SkillNature.GRYFFINDOR), HONOR(SkillNature.GRYFFINDOR), COURAGE(SkillNature.GRYFFINDOR),
+    DILIGENCE(SkillNature.HUFFLEPUFF), LOYALTY(SkillNature.HUFFLEPUFF), HONESTY(SkillNature.HUFFLEPUFF),
+    INTELLIGENCE(SkillNature.RAVENCLAW), WISDOM(SkillNature.RAVENCLAW), WIT(SkillNature.RAVENCLAW), CREATIVITY(SkillNature.RAVENCLAW),
+    CUNNING(SkillNature.SLYTHERIN), DETERMINATION(SkillNature.SLYTHERIN), AMBITION(SkillNature.SLYTHERIN),
+    INGENUITY(SkillNature.SLYTHERIN), AUTHORITY(SkillNature.SLYTHERIN),
     POWER(SkillNature.MAGIC), TRANSGRESSION(SkillNature.MAGIC);
     private final SkillNature skillNature;
 
@@ -23,6 +23,7 @@ public enum Characteristic {
     }
     public static List<Characteristic> getAllSkills(SkillNature skillNature) {
         List<Characteristic> result = new ArrayList<>();
+
         for (Characteristic characteristic : values()){
             if (characteristic.skillNature == skillNature) {
                 result.add(characteristic);
@@ -30,7 +31,6 @@ public enum Characteristic {
         }
         return result;
     }
-
     @Override
     public String toString() {
         String id = name();
