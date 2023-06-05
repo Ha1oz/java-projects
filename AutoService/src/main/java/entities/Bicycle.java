@@ -2,17 +2,15 @@ package entities;
 
 import entities.interfaces.TyresAvailable;
 
-public class Bicycle extends Transport implements TyresAvailable {
-    public Bicycle(String modelName, int wheelsCount) {
-        super(modelName, wheelsCount);
-    }
+public record Bicycle(String modelName, int wheelsCount) implements TyresAvailable {
     @Override
     public void updateTyre() {
         System.out.println("Changing the tire...");
     }
+
     @Override
     public void serveTransport() {
-        for (int i = 0; i < this.getWheelsCount(); i++) {
+        for (int i = 0; i < this.wheelsCount(); i++) {
             updateTyre();
         }
     }
