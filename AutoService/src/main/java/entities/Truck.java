@@ -1,6 +1,10 @@
 package entities;
 
-public class Truck extends Transport {
+import entities.interfaces.EngineAvailable;
+import entities.interfaces.TrailerAvailable;
+import entities.interfaces.TyresAvailable;
+
+public class Truck extends Transport implements TyresAvailable, EngineAvailable, TrailerAvailable {
     public Truck(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }
@@ -15,6 +19,14 @@ public class Truck extends Transport {
     @Override
     public void checkTrailer() {
         System.out.println("Checking the trailer...");
+    }
+    @Override
+    public void serveTransport() {
+        for (int i = 0; i < this.getWheelsCount(); i++) {
+            updateTyre();
+        }
+        checkEngine();
+        checkTrailer();
     }
 
 }

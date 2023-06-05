@@ -1,6 +1,9 @@
 package entities;
 
-public class Car extends Transport {
+import entities.interfaces.EngineAvailable;
+import entities.interfaces.TyresAvailable;
+
+public class Car extends Transport implements TyresAvailable, EngineAvailable {
     public Car(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }
@@ -11,5 +14,12 @@ public class Car extends Transport {
     @Override
     public void checkEngine() {
         System.out.println("Checking the engine...");
+    }
+    @Override
+    public void serveTransport() {
+        for (int i = 0; i < this.getWheelsCount(); i++) {
+            updateTyre();
+        }
+        checkEngine();
     }
 }
