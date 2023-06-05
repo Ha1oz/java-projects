@@ -8,14 +8,4 @@ public class Bicycle extends Transport {
     public void updateTyre() {
         System.out.println("Changing the tire...");
     }
-
-    @Override
-    public void checkEngine() {
-        serviceInvalid("Check engine");
-    }
-
-    @Override
-    public void checkTrailer() {
-        serviceInvalid("Check trailer");
-    }
 }
