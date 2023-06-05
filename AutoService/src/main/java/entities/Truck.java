@@ -4,10 +4,7 @@ import entities.interfaces.EngineAvailable;
 import entities.interfaces.TrailerAvailable;
 import entities.interfaces.TyresAvailable;
 
-public class Truck extends Transport implements TyresAvailable, EngineAvailable, TrailerAvailable {
-    public Truck(String modelName, int wheelsCount) {
-        super(modelName, wheelsCount);
-    }
+public record Truck(String modelName, int wheelsCount) implements TyresAvailable, EngineAvailable, TrailerAvailable {
     @Override
     public void updateTyre() {
         System.out.println("Changing the tire...");
@@ -22,11 +19,10 @@ public class Truck extends Transport implements TyresAvailable, EngineAvailable,
     }
     @Override
     public void serveTransport() {
-        for (int i = 0; i < this.getWheelsCount(); i++) {
+        for (int i = 0; i < this.wheelsCount(); i++) {
             updateTyre();
         }
         checkEngine();
         checkTrailer();
     }
-
 }

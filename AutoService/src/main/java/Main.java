@@ -1,7 +1,7 @@
 import entities.Bicycle;
 import entities.Car;
-import entities.Transport;
 import entities.Truck;
+import entities.interfaces.Transport;
 import service.ServiceStation;
 
 import java.util.Arrays;
