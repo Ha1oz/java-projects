@@ -11,10 +11,10 @@ public class Truck extends Transport {
     @Override
     public void checkEngine() {
         System.out.println("Checking the engine...");
-
     }
     @Override
     public void checkTrailer() {
         System.out.println("Checking the trailer...");
     }
+
 }
