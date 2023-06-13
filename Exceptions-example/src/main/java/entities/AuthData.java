@@ -5,7 +5,7 @@ import lombok.NonNull;
 import java.util.Objects;
 
 public abstract class AuthData {
-    protected final String REGEX = "^[a-zA-Z0-9_]{1,20}$";
+    protected static final String REGEX = "^[a-zA-Z0-9_]{1,20}$";
     protected String data;
     @Override
     public boolean equals(Object o) {
