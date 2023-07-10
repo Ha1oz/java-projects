@@ -27,8 +27,8 @@ public class CalculatorController {
     public String multiply(@RequestParam("value1") Integer val1, @RequestParam("value2") Integer val2){
         return String.format("%d * %d = %d", val1, val2, calculator.multiply(val1,val2));
     }
-    @GetMapping("/devide")
-    public String devide(@RequestParam("value1") Integer val1, @RequestParam("value2") Integer val2){
+    @GetMapping("/divide")
+    public String divide(@RequestParam("value1") Integer val1, @RequestParam("value2") Integer val2){
         return String.format("%d / %d = %d", val1, val2, calculator.divide(val1,val2));
     }
 }
