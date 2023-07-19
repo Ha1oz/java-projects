@@ -1,5 +1,7 @@
 package com.haloz.lists;
 
+import lombok.NonNull;
+
 import java.util.Arrays;
 
 public class StringListImpl implements StringList {
@@ -51,7 +53,7 @@ public class StringListImpl implements StringList {
             }
         }
         if(el == -1) {
-            return null;
+            throw new RuntimeException("Element {" + item + "} is not found");
         }
         this.array = copyArrayWithoutElement();
         return item;
@@ -101,7 +103,7 @@ public class StringListImpl implements StringList {
     public String get(int index) {
         return array[index];
     }
-
+    @NonNull
     @Override
     public boolean equals(StringList otherList) {
         if (this.size() != otherList.size()) {
@@ -129,7 +131,9 @@ public class StringListImpl implements StringList {
     }
     @Override
     public String[] toArray() {
-        return this.array;
+        String[] res = new String[this.size()];
+        System.arraycopy(this.array, 0, res, 0, this.size());
+        return res;
     }
     @Override
     public String toString() {

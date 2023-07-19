@@ -5,6 +5,6 @@ import com.haloz.lists.StringListImpl;
 
 public class Main {
     public static void main(String[] args) {
-
+        
     }
 }

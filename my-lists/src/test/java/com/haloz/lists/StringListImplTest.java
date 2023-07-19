@@ -36,7 +36,7 @@ class StringListImplTest {
     void remove() {
         int expectedSize = stringList.size();
 
-        Assertions.assertNull(stringList.remove(el));
+        Assertions.assertThrows(RuntimeException.class, () -> stringList.remove(el));
         Assertions.assertEquals(expectedSize, stringList.size());
 
         Assertions.assertNotNull(stringList.remove(stringList.get(0)));
