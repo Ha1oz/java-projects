@@ -1,4 +1,4 @@
-package com.haloz.lists;
+package com.haloz.lists.api;
 
 public interface StringList {
     // Добавление элемента.

@@ -1,6 +1,7 @@
-package com.haloz.lists;
+package com.haloz.lists.impl;
 
 import com.haloz.exception.ElementIsNotFoundException;
+import com.haloz.lists.api.StringList;
 import lombok.NonNull;
 
 import java.util.Arrays;

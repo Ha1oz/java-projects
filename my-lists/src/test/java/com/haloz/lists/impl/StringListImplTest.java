@@ -1,11 +1,11 @@
-package com.haloz.lists;
+package com.haloz.lists.impl;
 
 import com.haloz.exception.ElementIsNotFoundException;
+import com.haloz.lists.api.StringList;
+import com.haloz.lists.impl.StringListImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class StringListImplTest {
 
