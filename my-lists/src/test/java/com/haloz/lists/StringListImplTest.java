@@ -1,5 +1,6 @@
 package com.haloz.lists;
 
+import com.haloz.exception.ElementIsNotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,7 +37,7 @@ class StringListImplTest {
     void remove() {
         int expectedSize = stringList.size();
 
-        Assertions.assertThrows(RuntimeException.class, () -> stringList.remove(el));
+        Assertions.assertThrows(ElementIsNotFoundException.class, () -> stringList.remove(el));
         Assertions.assertEquals(expectedSize, stringList.size());
 
         Assertions.assertNotNull(stringList.remove(stringList.get(0)));

@@ -1,5 +1,6 @@
 package com.haloz.lists;
 
+import com.haloz.exception.ElementIsNotFoundException;
 import lombok.NonNull;
 
 import java.util.Arrays;
@@ -9,12 +10,15 @@ public class StringListImpl implements StringList {
     public StringListImpl(){
         this.array = new String[0];
     }
+    @NonNull
     public StringListImpl(String... strings){
         this.array = strings;
     }
+    @NonNull
     public StringListImpl(StringList stringList){
         this.array = stringList.toArray();
     }
+    @NonNull
     @Override
     public String add(String item) {
         String[] buff = new String[this.array.length + 1];
@@ -23,6 +27,7 @@ public class StringListImpl implements StringList {
         this.array = buff;
         return item;
     }
+    @NonNull
     @Override
     public String add(int index, String item) {
         String[] buff = new String[this.array.length + 1];
@@ -37,11 +42,13 @@ public class StringListImpl implements StringList {
         this.array = buff;
         return item;
     }
+    @NonNull
     @Override
     public String set(int index, String item) {
         this.array[index] = item;
         return item;
     }
+    @NonNull
     @Override
     public String remove(String item) {
         int el = -1;
@@ -53,7 +60,7 @@ public class StringListImpl implements StringList {
             }
         }
         if(el == -1) {
-            throw new RuntimeException("Element {" + item + "} is not found");
+            throw new ElementIsNotFoundException("Element {" + item + "} is not found");
         }
         this.array = copyArrayWithoutElement();
         return item;
@@ -65,6 +72,7 @@ public class StringListImpl implements StringList {
         this.array = copyArrayWithoutElement();
         return res;
     }
+    @NonNull
     @Override
     public boolean contains(String item) {
         boolean res = false;
@@ -76,6 +84,7 @@ public class StringListImpl implements StringList {
         }
         return res;
     }
+    @NonNull
     @Override
     public int indexOf(String item) {
         int el = -1;
@@ -87,7 +96,7 @@ public class StringListImpl implements StringList {
         }
         return el;
     }
-
+    @NonNull
     @Override
     public int lastIndexOf(String item) {
         int el = -1;
